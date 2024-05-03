@@ -3,7 +3,6 @@ package com.upc.chefexpressweb.controllers;
 import com.upc.chefexpressweb.dtos.UserDTO;
 import com.upc.chefexpressweb.entities.User;
 import com.upc.chefexpressweb.services.UserService;
-import jakarta.persistence.GeneratedValue;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
