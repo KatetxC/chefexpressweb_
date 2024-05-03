@@ -1,15 +1,13 @@
 package com.upc.chefexpressweb.controllers;
 
-import com.upc.chefexpressweb.services.UserService;
+import com.upc.chefexpressweb.services.SavedRecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/saved_recipes")
+public class SavedRecipeController {
     @Autowired
-    private UserService userService;
-
-
+    private SavedRecipeService savedRecipeService;
 }
