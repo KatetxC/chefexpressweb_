@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "Usuarios")
 @RequiredArgsConstructor
 public class User {
     @Id
