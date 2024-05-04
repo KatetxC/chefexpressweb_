@@ -1,18 +1,22 @@
 package com.upc.chefexpressweb.services;
+
 import com.upc.chefexpressweb.entities.User;
 import com.upc.chefexpressweb.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-
-    public void insert(User user) {
-        userRepository.save(user);
+    @Transactional
+    public User save(User user){
+        return userRepository.save(user);
     }
-    public User findById(Long id) {
-        return userRepository.findById(id).orElse(new User());
+    public List<User> list(){
+        return userRepository.findAll();
     }
 }

@@ -1,4 +1,4 @@
-package com.upc.chefexpressweb.security;
+/*package com.upc.chefexpressweb.security;
 
 import java.io.Serializable;
 
@@ -16,4 +16,4 @@ public class JwtResponse implements Serializable {
         this.jwttoken = jwttoken;
     }
 
-}
+}*/

@@ -1,4 +1,4 @@
-package com.upc.chefexpressweb.security;
+/*package com.upc.chefexpressweb.security;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -74,4 +74,4 @@ public class JwtTokenUtil implements Serializable {
         final String username = getUsernameFromToken(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
-}
+}*/

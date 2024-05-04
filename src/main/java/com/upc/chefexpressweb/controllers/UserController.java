@@ -5,29 +5,23 @@ import com.upc.chefexpressweb.entities.User;
 import com.upc.chefexpressweb.services.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-@RequestMapping("/user")
+@RestController
+@RequestMapping("/api")
 public class UserController {
     @Autowired
     private UserService userService;
-    @GetMapping("/register")
-    public void register(@RequestBody UserDTO userdto) {
+
+    @PostMapping("/user")
+    public ResponseEntity<UserDTO> save(@RequestBody UserDTO userDTO){
         ModelMapper modelMapper = new ModelMapper();
-        User user = modelMapper.map(userdto, User.class);
-        userService.insert(user);
+        User user = modelMapper.map(userDTO, User.class);
+        user = userService.save(user);
+        userDTO = modelMapper.map(user, UserDTO.class);
+        return new ResponseEntity<>(userDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/manage/{id}")
-    public UserDTO manage(@PathVariable("id") long id) {
-        ModelMapper modelMapper = new ModelMapper();
-        UserDTO userDTO = modelMapper.map(userService.findById(id), UserDTO.class);
-        return userDTO;
-    }
 }

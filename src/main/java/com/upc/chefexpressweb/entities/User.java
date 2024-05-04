@@ -1,14 +1,15 @@
 package com.upc.chefexpressweb.entities;
 
 import jakarta.persistence.*;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
-
+@Data
 @Entity
-@Table(name = "Usuarios")
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

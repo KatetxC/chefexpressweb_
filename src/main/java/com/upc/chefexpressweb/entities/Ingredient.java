@@ -1,11 +1,15 @@
 package com.upc.chefexpressweb.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+@Data
 @Entity
-@Table(name="Ingredient")
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
