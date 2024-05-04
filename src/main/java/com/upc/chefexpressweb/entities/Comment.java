@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -19,7 +18,7 @@ public class Comment {
     private Long id;
     @ManyToOne
     @JoinColumn(name="User_Id")
-    private User user;
+    private Users user;
     @ManyToOne
     @JoinColumn(name="Recipe_Id")
     private Recipe recipe;
