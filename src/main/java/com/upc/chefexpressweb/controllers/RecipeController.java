@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class RecipeController {
@@ -22,6 +25,14 @@ public class RecipeController {
         recipe = recipeService.save(recipe);
         recipeDTO = modelMapper.map(recipe, RecipeDTO.class);
         return new ResponseEntity<>(recipeDTO, HttpStatus.OK);
+    }
+    @GetMapping("/recipes")
+    public ResponseEntity<List<RecipeDTO>> list(){
+        ModelMapper modelMapper = new ModelMapper();
+        List<RecipeDTO> emp = Arrays.asList(
+                modelMapper.map(recipeService.list(),
+                        RecipeDTO[].class));
+        return new ResponseEntity<>(emp, HttpStatus.OK);
     }
 
 }
