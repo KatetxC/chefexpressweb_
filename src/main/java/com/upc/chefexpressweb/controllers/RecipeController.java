@@ -34,5 +34,13 @@ public class RecipeController {
                         RecipeDTO[].class));
         return new ResponseEntity<>(emp, HttpStatus.OK);
     }
+    @GetMapping("/recipesName/{prefix}")
+    public ResponseEntity<List<RecipeDTO>> findAllByNameStartingWith(@PathVariable("prefix") String prefix){
+        ModelMapper modelMapper = new ModelMapper();
+        List<RecipeDTO> emp = Arrays.asList(
+                modelMapper.map(recipeService.findAllByNameStartingWith(prefix),
+                        RecipeDTO[].class));
+        return new ResponseEntity<>(emp, HttpStatus.OK);
+    }
 
 }

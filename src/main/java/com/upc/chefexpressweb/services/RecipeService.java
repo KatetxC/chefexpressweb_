@@ -19,4 +19,7 @@ public class RecipeService {
     public List<Recipe> list(){
         return recipeRepository.findAll();
     }
+    public List<Recipe> findAllByNameStartingWith(String prefix){
+        return recipeRepository.findAllByNameStartingWith(prefix);
+    }
 }
