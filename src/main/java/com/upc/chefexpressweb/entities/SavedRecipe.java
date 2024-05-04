@@ -15,7 +15,7 @@ public class SavedRecipe {
     private Long id;
     @ManyToOne
     @JoinColumn(name="User_Id")
-    private User user;
+    private Users user;
     @ManyToOne
     @JoinColumn(name="Recipe_Id")
     private Recipe recipe;
