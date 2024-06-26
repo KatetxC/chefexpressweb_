@@ -1,0 +1,102 @@
+.principal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 20px;
+  position: relative; /* Para permitir posicionamiento absoluto de los hijos */
+}
+
+.text-container {
+  position: absolute;
+  top: 20%; /* Ajusta la posición vertical */
+  transform: translateY(-20%); /* Ajusta el contenedor de texto verticalmente */
+  z-index: 1; /* Asegura que el texto esté sobre las imágenes */
+}
+
+h1, h2, h3 {
+  font-size: 5em;
+  font-weight: bold;
+  margin: 30px 0;
+  top:10%;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.principal-container img {
+  max-width: 100%; /* Ajusta el tamaño de la imagen para que sea proporcional */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.principal-container img[src="assets/bigSalad.png"] {
+  position: absolute;
+  top: 35%;
+  right: 250px;
+  max-width: 500px; /* Establece un tamaño máximo para que no crezca demasiado */
+  transform: translateY(-50%); /* Centra verticalmente la imagen grande */
+}
+
+.principal-container img[src="assets/bandw.png"] {
+  position: absolute;
+  top: calc(35% + 150px); /* Ajusta la posición debajo de la imagen grande */
+  right: 50px; /* Sobresale un poco por la derecha */
+  max-width: 500px; /* Establece un tamaño máximo para que no crezca demasiado */
+  transform: translateY(-50%);
+}
+
+.categories-container {
+  display: flex;
+  justify-content: flex-start; /* Alinea los contenedores a la izquierda */
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 50%; /* Ajusta la posición vertical */
+  left: 0; /* Alinea los contenedores al borde izquierdo */
+}
+
+.category {
+  background-color: white;
+  padding: 10px 20px; /* Reduce el tamaño del padding */
+  text-align: center;
+  font-size: 1.2em; /* Reduce el tamaño de la fuente */
+  margin-right: 10px; /* Espacio entre los contenedores */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra a los contenedores */
+  border-radius: 20px; /* Añade bordes redondeados */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category img {
+  max-width: 100px; /* Ajusta el tamaño máximo de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-bottom: 10px; /* Añade un margen debajo de la imagen */
+}
+
+.category span {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold; /* Texto en negrita */
+  color: black; /* Color de texto negro */
+}
+
+.facebook-logo {
+  position: absolute;
+  top:80%; /* Ajusta la posición vertical */
+  left: 20px; /* Ajusta la posición horizontal */
+}
+
+.instragram-logo {
+  position: absolute;
+  top:80%; /* Ajusta la posición vertical */
+  left: 90px; /* Ajusta la posición horizontal */
+}
+
+.twitter-logo {
+  position: absolute;
+  top:80%; /* Ajusta la posición vertical */
+  left: 160px; /* Ajusta la posición horizontal */
+}

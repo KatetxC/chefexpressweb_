@@ -1,0 +1,41 @@
+<div class="title-container">
+  <h2 class="title">Registrar Comentarios</h2>
+</div>
+<div class="container" style="text-align: center">
+  <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Recetas</mat-label>
+      <mat-select formControlName="c1">
+        <mat-option *ngFor="let c of listaRecipes" [value]="c.idRecipe">
+          {{ c.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('c1')?.hasError('required')">
+        La receta es obligatoria.
+      </mat-error>
+    </mat-form-field>
+    <br />
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Calificación</mat-label>
+      <input matInput placeholder="Calificación" formControlName="c2" />
+      <mat-error *ngIf="form.get('c2')?.hasError('required')">
+        La calificación es obligatoria.
+      </mat-error>
+    </mat-form-field>
+    <br />
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Comentario</mat-label>
+      <input matInput placeholder="Comentario" formControlName="c3" />
+      <mat-error *ngIf="form.get('c3')?.hasError('required')">
+        El comentario es obligatorio.
+      </mat-error>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/comment">
+      Cancelar
+    </button>
+  </form>
+</div>
